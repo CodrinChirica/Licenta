@@ -1,0 +1,29 @@
+-install python 3.5
+-pip install Django
+
+TO RUN APP: "python manage.py runserver"
+
+XSS testing: https://github.com/epsylon/xsser
+
+What I Have so far:
+(INTEGRATED)1. jar that creates a json with bad/good links (looks shitty)
+(INTEGRATED)2. some validations inside the jar that aren't finished (w3c validators)
+            3. GUI - mada's work
+(INTEGRATED)4. Screenshots for mobile - python
+            5. Cross-browsing screens - still needs some work to download the screens 
+            6. Something that makes some requests (locust)
+            7. Get #shares: 
+            	- http://graph.facebook.com/?id=http://www.info.uaic.ro/bin/Main
+            	- https://www.linkedin.com/countserv/count/share?url=http://www.info.uaic.ro&format=json
+(INTEGRATED)8. Rank Checker
+			9. SSL/TLS Testing Server: https://www.ssllabs.com/projects/ssllabs-apis/
+
+Idei:
+- test sql injection & security
+- test SEO
+- create a crawler
+- make some graphics
+- site vs site
+
+-Grafic cu distributia timpului de asteptare: cat astepti cand situl e la capacitate maxima
+(https://andrew-jones.com/blog/load-testing-with-locust/)
