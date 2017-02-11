@@ -6,24 +6,141 @@ TO RUN APP: "python manage.py runserver"
 XSS testing: https://github.com/epsylon/xsser
 
 What I Have so far:
-(INTEGRATED)1. jar that creates a json with bad/good links (looks shitty)
+(INTEGRATED)1. jar that creates a json with bad/good links 
 (INTEGRATED)2. some validations inside the jar that aren't finished (w3c validators)
-            3. GUI - mada's work
+(---WIP----)3. GUI - work
 (INTEGRATED)4. Screenshots for mobile - python
             5. Cross-browsing screens - still needs some work to download the screens 
             6. Something that makes some requests (locust)
-            7. Get #shares: 
-            	- http://graph.facebook.com/?id=http://www.info.uaic.ro/bin/Main
-            	- https://www.linkedin.com/countserv/count/share?url=http://www.info.uaic.ro&format=json
+(INTEGRATED)7. Get #shares: 
+(INTEGRATED)	- http://graph.facebook.com/?id=http://www.info.uaic.ro/bin/Main
+(INTEGRATED)	- https://www.linkedin.com/countserv/count/share?url=http://www.info.uaic.ro&format=json
 (INTEGRATED)8. Rank Checker
 			9. SSL/TLS Testing Server: https://www.ssllabs.com/projects/ssllabs-apis/
 
-Idei:
-- test sql injection & security
-- test SEO
-- create a crawler
-- make some graphics
-- site vs site
+
+TODO: 
+De ascuns sectiunile in pagina pana utilizatorul introduce linkul
+
+1. De aplicat validarea W3C recursiv pentru toate linkurile din prima pagina - 1h 30m
+2. MOST IMPORTANT !!!!!!!! Locust si grafice pentru interpretarea datelor - 3/4 h
+3. Cross-browsing si downloadat imaginiile ( pus url in <img> pentru a nu pastra imaginile pe server) - 1h 30m
+4. Social media: de sters parametrii din link, ramas doar linkul principal - 30m
+5. De memorat raportul pentru site-ul testat + posibiliatate de a incarca vechiul raportat
+6. De verificat data ultimei actualizari a paginii de test, pentru a oferi optiunea de a incarca un raport vechi, fara a face o noua testare
+7. linkChecker needs more work, configure url as a parameter
+8. locust configurabil nr de useri/requests sau fisier propriu
 
 -Grafic cu distributia timpului de asteptare: cat astepti cand situl e la capacitate maxima
 (https://andrew-jones.com/blog/load-testing-with-locust/)
+
+--------------------------- Dean ideas: 
+1. Functionalitatea e cea mai importanta
+2. de unit functionalitatile intre ele, corelat modulele
+3. Doc: de facut 2 cazuri de test, intre pagina facultatii si pagini valide 
+4. DOC: de prezentat cu ce este utila aplicatia create de mine, la ce ajuta
+5. 
+
+Search ideas:
+    website vulnerabilities
+    checkmy code
+    valdidate my code
+
+
+
+TOOLS suggestions(searched a few minutes - not to be considered veeeery relevant):
+    http://wapiti.sourceforge.net/    - (The web-application vulnerability scanner)
+    	+ instalat si functioneaza in python, apel din consola
+    	+ scaneaza site-ul si produce niste atacuri pentru testare
+    	+ genereaza mai multe tipuri de atac (XSS, BlindSQL, SQL)
+    	+ free si usor de instalat, rulat
+    	++ raport JSON foarte detaliat, cu vulnerabilitati si solutii pentru toate atacurile
+    	- dureaza destul de mult, dar acceptabil
+
+    https://github.com/CISOfy/lynis
+    	- ca o prima impresie, este doar pentru sisteme de Linux
+    	+ foarte complex !
+
+    http://www.primalsecurity.net/0x7-python-tutorial-web-scanning-and-exploitation/ ???
+    http://www.sixfeetup.com/blog/testing-and-debugging-python-code
+
+
+
+  NOTE Documentatie:
+  1. Frameworkul usureaza munca unui tester
+  2. Graficele ajuta sa viualizezi cum se comporta app. cand creste load-ul ex: load mare -> sistemul are strange behaviours, lucru pe care nu il putem observa la testarea cu un singur user
+  3. Frameworkul aduce niste guidelines despre cum ar trebui facuta testarea
+  4. 
+
+  Documentatie: 
+
+  Continut:
+
+1.	Context	
+2.	Introducere	
+3.	Testarea	approx. 15 pg
+3.1.	Introducere	0.5
+3.2.	Fundamentele testarii	0.5
+	3.2.1.	De ce este necesara testarea 1 pg
+	3.2.2.	Principile testarii 1pg
+	3.2.2'. Procesul de testare 1 pg
+	3.2.3.	Psihologia testarii
+3.3 Testarea in ciclul de dezvolatare a software-ului
+	3.3.1 Modele de dezvoltare software
+	3.3.2. Nivele si tipuri de testare
+3.4 Managementul testarii
+	3.4.1. Organizarea testarii
+	3.4.2. Procesul de testare
+------------ Done ---------------- 25 pg
+4.	Aplicatii similare	approx. 2pg
+	4.1.	Context	
+  4.2.  Nibbler
+  4.3.  
+6.	Ahitectura aplicatiei
+5.  Tehnologii folosite
+5.1 Python 3 pg
+
+5.2.   Django.........................................................................................................................15
+1.1.1.  Istorie................................................................................................................15
+1.1.2.  Principii.............................................................................................................16
+1.1.3.  Arhitectură........................................................................................................16
+1.1.4.  Structura unui proiect.......................................................................................18
+1.1.5.  Mecanismul intern.............................................................................................19
+1.1.6.  Modele...............................................................................................................20
+1.1.7.  Migrații..............................................................................................................20
+Securitate...........................................................................................................
+7.	Detalii de implementare
+8.	Concluzii
+9.	Directii de dezvoltare
+10.	Bibliografie	
+10.1.	Surse	
+5.2.	Imagini	
+ 
+
+1. General website and HTML checks:  
+	- w3c validators
+
+2. CSS checking:   
+	- w3c validators
+
+3. Speed & Load tests:  
+	- locust
+
+4. Accessibility: 
+	- make a survey ( 20 people ) about website usability ( find different infos on fii webpage )
+	- compare to other sites (speed&load test, other reports, generalitati[ orar, structura anului, anunturi, info despre profs, licenta/master]) ( comaparatie intre cele 2 site-uri nou si vechi)
+
+5. Mobile-readiness:   
+	- verifica daca e optimizat pentru mobile/tableta
+	- daca este optimizat pentru a putea fi printat
+
+5'. Cross-browser:     
+	- screenshots pentru mai multe tipuri de browsers, versiuni si OS
+
+6. Social status:
+	- Facebook
+	- LinkedIn
+
+7. Google ranking
+
+8. SSL/TLS Vulnerabilities scanner
